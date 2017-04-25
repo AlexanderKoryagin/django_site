@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+
+  db:
+    container_name: ak_postgres
+    image: postgres
+    environment:
+      http_proxy: ${http_proxy}
+      https_proxy: ${https_proxy}
+
+  web:
+    container_name: ak_django
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        http_proxy: ${http_proxy}
+        https_proxy: ${https_proxy}
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./site:/site
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
