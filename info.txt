@@ -1,0 +1,12 @@
+docker-compose run web django-admin.py startproject simple_site .
+
+sudo chown -R $USER:$USER ./site
+docker-compose up  --> http://localhost:8000/
+
+docker-compose run web mkdir ./simple_site/page
+docker-compose run web python manage.py startapp page ./simple_site/page
+sudo chown -R $USER:$USER ./site
+
+
+
+docker-compose run web python manage.py syncdb
