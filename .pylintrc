@@ -1,9 +1,9 @@
 [MESSAGES CONTROL]
 disable=no-member,
-        locally-disabled,
+        locally-disabled
 
 [MASTER]
-ignore=somefile.py,
+ignore=somefile.py
 
 [FORMAT]
 max-line-length=79

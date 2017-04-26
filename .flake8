@@ -1,0 +1,14 @@
+[flake8]
+
+# D104 Missing docstring in public package (in __init__.py)
+# H233: Python 3.x incompatible use of print operator
+ignore = D104
+
+exclude = .venv,
+          __pycache__,
+          *pyc
+
+max_line_length = 79
+show_source = True
+statistics = True
+doctests = True
